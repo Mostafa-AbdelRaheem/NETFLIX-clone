@@ -1,0 +1,23 @@
+.footer {
+  height: 250px;
+}
+
+li {
+  border-style: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  margin: 10px;
+  text-decoration: none;
+}
+
+/* a {
+  color: white;
+  background-color: blue;
+}
+i {
+  color: red;
+} */
+#youtube {
+  background-color: blueviolet;
+}
