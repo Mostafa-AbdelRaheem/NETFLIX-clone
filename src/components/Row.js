@@ -2,16 +2,12 @@ import React,{useEffect, useState} from 'react';
 import axios from '../axios';
 import "../style/Row.css"
 
-const Row = ({title,fetchUrl}) => {
+const Row = ({title,fetchUrl,isLargeRow}) => {
     const [movies,setMovies] = useState([]);
-    console.log("this is the request from API",fetchUrl)
-
     useEffect(() => {
 
         async function fetchData(){
-
             const request = await axios.get(fetchUrl);
-            // console.log("this is the request from API",request.data.results);
             setMovies(request.data.results);
             return request;
         }
@@ -24,9 +20,9 @@ const Row = ({title,fetchUrl}) => {
             <div className="rowPosters">
                 {movies.map((movie)=>{
                     return (
-                    <img 
-                        className="rowPoster" 
-                        src={`http://image.tmdb.org/t/p/original${movie.poster_path}`} 
+                    <img key={movie.id}
+                        className={`rowPoster ${isLargeRow && "rowPosterLarge"}`} 
+                        src={`http://image.tmdb.org/t/p/original${isLargeRow ? movie.poster_path : movie?.backdrop_path}`} 
                         alt={movie.name}
                     />
                     )
