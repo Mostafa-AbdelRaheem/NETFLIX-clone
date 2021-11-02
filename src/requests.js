@@ -14,58 +14,5 @@ const requests ={
 
 export default requests;
 
-// https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
-// https://api.themoviedb.org/3/discover/tv?with_networks=213&api_key=e88aea6c998dc03d9dc3d1b3bf5880d0
-
-
 // this link if you get you will find all the genre ids
 // https://api.themoviedb.org/3/genre/movie/list?api_key=e88aea6c998dc03d9dc3d1b3bf5880d0&language=en-US
-
-
-// "id": 12,
-// "name": "Adventure"
-
-// "id": 16,
-// "name": "Animation"
-
-// "id": 35,
-// "name": "Comedy"
-
-// "id": 80,
-// "name": "Crime"
-
-// "id": 99,
-// "name": "Documentary"
-
-// "id": 18,
-// "name": "Drama"
-
-// "id": 10751,
-// "name": "Family"
-
-// "id": 14,
-// "name": "Fantasy"
-
-// "id": 36,
-// "name": "History"
-
-// "id": 27,
-// "name": "Horror"
-
-// "id": 10402,
-// "name": "Music"
-
-// "id": 9648,
-// "name": "Mystery"
-
-// "id": 10749,
-// "name": "Romance"
-
-// "id": 878,
-// "name": "Science Fiction"
-
-// "id": 10770,
-// "name": "TV Movie"
-
-// "id": 53,
-// "name": "Thriller"
