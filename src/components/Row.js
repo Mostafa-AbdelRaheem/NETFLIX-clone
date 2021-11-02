@@ -31,14 +31,10 @@ const Row = ({title,fetchUrl,isLargeRow}) => {
         }else{
             console.log("the name of the movie:",(movie?.name).trim())
             movieTrailer(movie.name || "")
-            .then(response => console.log( response ))
-            // .then((url)=>{
-            //     const urlParams = new URLSearchParams(new URL(url).search);
-            //     console.log("urlParams",urlParams);
-            //     setTrailerUrl(urlParams.get('v'));
-            //     console.log("link ID",urlParams.get('v'))
-
-            // })
+            .then((url)=>{
+                const urlParams = new URLSearchParams(new URL(url).search);
+                setTrailerUrl(urlParams.get('v'));
+            })
             .catch((error)=>console.log(error));
         }
     }
