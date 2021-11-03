@@ -10,9 +10,17 @@ The API used in this project is [TMDB API](https://www.themoviedb.org/)
 
 # Firebase
 
-we use Firebase as Database for the website [TMDB API](https://www.themoviedb.org/)
+we use Firebase as Database for the website [Firebase](https://firebase.google.com/)
 
-# Config
+# Build Tool
+
+- HTML
+- CSS
+- React
+- TMDB API
+- React-youtube
+- Movie-trainler
+- Firebase
 
 ## Setting up the API
 
