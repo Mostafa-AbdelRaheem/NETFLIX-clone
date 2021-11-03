@@ -58,5 +58,5 @@ npm install
 # Run the project
 
 ```
-npm run build-dev
+npm start
 ```
