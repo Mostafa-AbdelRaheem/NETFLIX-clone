@@ -1,21 +1,20 @@
+import React from 'react';
+import { Route,Switch } from 'react-router-dom';
 import './App.css';
-import Banner from './components/Banner';
-import NavBar from './components/NavBar';
-import Row from './components/Row';
-import requests from './requests';
+import Browse from './pages/Browse';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <Banner/>
-      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated}/>
-      <Row title="Action" fetchUrl={requests.fetchActionMovies}/>
-      <Row title="Comedy" fetchUrl={requests.fetchComedyMovies}/>
-      <Row title="Horror" fetchUrl={requests.fetchHorrorMovies}/>
-      <Row title="Romance" fetchUrl={requests.fetchRomanceMovies}/>
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
+    <div>
+      <Switch>
+      <Route path="/home" component={Home}/>
+      <Route path="/signin" component={Signin}/>
+      <Route path="/signup" component={Signup}/>
+      <Route path="/" component={Browse}/>
+      </Switch>
     </div>
   );
 }

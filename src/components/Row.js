@@ -1,12 +1,16 @@
 import React,{useEffect, useState} from 'react';
-import YouTube from 'react-youtube';
-import movieTrailer from 'movie-trailer';
-import axios from '../axios';
-import "../style/Row.css"
+import Description from './Description';
+import axios from '../utils/axios';
+import "../styles/row.css";
 
-const Row = ({title,fetchUrl,isLargeRow}) => {
+export const MovieDataContext=React.createContext()
+
+
+const Row = ({title,fetchUrl}) => {
     const [movies,setMovies] = useState([]);
-    const [trailerUrl,setTrailerUrl] = useState("");
+    const[movieInfo,setMovieInfo]=useState([]);
+    const[descriptionStatus,setDescriptionStatus]=useState(false);
+    // const [trailerUrl,setTrailerUrl] = useState("");
     useEffect(() => {
 
         async function fetchData(){
@@ -17,26 +21,12 @@ const Row = ({title,fetchUrl,isLargeRow}) => {
         fetchData();
       }, [fetchUrl]);
 
-    const opts={
-        height:"390",
-        width:"100%",
-        playerVars:{
-            autoplay:1
-        },
-    }
-
+    
     const handleClick=(movie)=>{
-        if(trailerUrl){
-            setTrailerUrl("");
-        }else{
-            console.log("the name of the movie:",(movie?.name).trim())
-            movieTrailer(movie.name || "")
-            .then((url)=>{
-                const urlParams = new URLSearchParams(new URL(url).search);
-                setTrailerUrl(urlParams.get('v'));
-            })
-            .catch((error)=>console.log(error));
-        }
+        setMovieInfo(movie);
+        // console.log("this is ROW all movies",movie)
+        setDescriptionStatus(true);
+        
     }
     return (
         <div className="row">
@@ -44,16 +34,18 @@ const Row = ({title,fetchUrl,isLargeRow}) => {
             <div className="rowPosters">
                 {movies.map((movie)=>{
                     return (
-                    <img key={movie.id}
+                        <img key={movie.id}
                         onClick={()=>handleClick(movie)}
-                        className={`rowPoster ${isLargeRow && "rowPosterLarge"}`} 
-                        src={`http://image.tmdb.org/t/p/original${isLargeRow ? movie.poster_path : movie?.backdrop_path}`} 
+                        className="rowPoster" 
+                        src={`http://image.tmdb.org/t/p/original${movie.poster_path}`} 
                         alt={movie.name}
-                    />
-                    )
-                })}
+                        />
+                        )
+                    })}
             </div>
-            {trailerUrl&&<YouTube videoId={trailerUrl} opts={opts}/>}
+            {<MovieDataContext.Provider value={{movieInfo,descriptionStatus}} >
+                <Description />
+            </MovieDataContext.Provider>}
         </div>
     );
 

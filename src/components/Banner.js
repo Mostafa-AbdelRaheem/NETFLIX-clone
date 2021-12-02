@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
-import axios from '../axios';
-import requests from '../requests';
-import '../style/Banner.css'
+import axios from '../utils/axios';
+import requests from '../utils/requests';
+import '../styles/banner.css'
 
 const Banner = () => {
     const [movie,setMovie] = useState([]);
@@ -23,21 +23,26 @@ const Banner = () => {
 
 
     return ( 
-        <header className="banner"
+        <header className="bannerContainer"
             style={{
                 backgroundSize:"cover",
                 backgroundImage:`url("http://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-                backgroundPosition:"center center"
             }}
         
-        > {/* background image */}
+        > 
             <div className="bannerContent">
                 <h1 className="bannerTitle">{movie?.title || movie?.name || movie?.original_name}</h1>
-                <div className="bannerButtons">
-                    <button className="bannerButton">Play</button>
-                    <button className="bannerButton">My List</button>
-                </div>
                 <p className="bannerOverview">{truncate(movie?.overview,150)}</p>
+                <div className="bannerButtons">
+                    <div className="bannerPlayButton">
+                        <img src="./images/icons/play.png"/>
+                        <p>play</p>
+                    </div>
+                    <div className="bannerInfoButton">
+                        <img src="./images/icons/info.png"/>
+                        <p>More Info</p>
+                    </div>
+                </div>
             </div>
             <div className="bannerBottom"/>
         </header>

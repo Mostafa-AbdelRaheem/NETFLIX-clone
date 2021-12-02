@@ -1,0 +1,70 @@
+.navbarContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbarContainerBlack {
+  background-color: #111;
+}
+
+.navbarContainer .browseNavbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.navbarContainer .browseNavbar .leftSideNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbarContainer .browseNavbar .leftSideNavbar .leftSideNavbarLink {
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+}
+.navbarContainer .browseNavbar .leftSideNavbar .logoContainer {
+  width: 120px;
+}
+
+.navbarContainer .browseNavbar .leftSideNavbar .logoContainer img {
+  width: 100%;
+}
+
+.navbarContainer .browseNavbar .RightSideNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarContainer .browseNavbar .RightSideNavbar .searchIcon {
+  color: white;
+  margin: 5px;
+}
+
+.navbarContainer .browseNavbar .RightSideNavbar .KidesLink {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+.navbarContainer .browseNavbar .RightSideNavbar .user {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+}
+.navbarContainer .browseNavbar .RightSideNavbar .user .userAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}

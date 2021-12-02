@@ -1,7 +1,36 @@
+:root {
+  --main-color: #db0510;
+  --secondary-color: #222;
+}
 * {
-  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
 }
 
-.App {
-  background-color: #141414;
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
