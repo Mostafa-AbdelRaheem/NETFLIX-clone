@@ -24,7 +24,7 @@ we use Firebase as Database for the website [Firebase](https://firebase.google.c
 
 ## Setting up the API
 
-we will be using the MeaningCloud Sentiment Analysis API .
+we will be using TMDB API .
 
 ### Step 1: Signup for an API key
 
